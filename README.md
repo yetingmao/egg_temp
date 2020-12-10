@@ -1,12 +1,11 @@
+<!--
+ * @Date: 2020-12-08 21:39:20
+ * @LastEditors: yetm
+ * @LastEditTime: 2020-12-08 21:46:59
+ * @FilePath: /egg_temp/README.md
+-->
 # test
 
-
-
-## QuickStart
-
-<!-- add docs here for user -->
-
-see [egg docs][egg] for more detail.
 
 ### Development
 
