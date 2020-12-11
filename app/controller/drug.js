@@ -16,6 +16,7 @@ class DrugController extends Controller {
     async index() {
         const ctx = this.ctx;
         const query = { limit: toInt(ctx.query.limit), offset: toInt(ctx.query.offset) };
+        console.log(ctx.model.Drug)
         ctx.body = await ctx.model.Drug.findAll(query);
     }
 

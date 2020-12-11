@@ -9,7 +9,7 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     const { INTEGER, DATE, STRING, UUID, UUIDV4, DOUBLE } = Sequelize;
-    await queryInterface.createTable('grug', {
+    await queryInterface.createTable('drugs', {
       id: { type: UUID, primaryKey: true, defaultValue: UUIDV4 },
       name: STRING,
       number: INTEGER,
@@ -22,7 +22,7 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('grug');
+    await queryInterface.dropTable('drugs');
 
   }
 };

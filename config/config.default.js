@@ -35,14 +35,28 @@ module.exports = appInfo => {
   //   // 如果还有其他模板引擎，需要合并多个目录
   //   publicPath: path.join(appInfo.baseDir, 'app/assets'),
   // };
+  // config.assets = {
+  //   devServer: {
+  //       command: '',
+  //       port: 8008,
+  //     },
+  //   };
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',
     
   };
+  // const cluster  = {
+  //   listen: {
+  //   port: 7001,
+  //   hostname: '127.0.0.1', // 不建议设置 hostname 为 '0.0.0.0'，它将允许来自外部网络和来源的连接，请在知晓风险的情况下使用
+  //   // path: '/var/run/egg.sock',
+  //   }
+  // };
 
   return {
     ...config,
     ...userConfig,
+    //...cluster,
   };
 };

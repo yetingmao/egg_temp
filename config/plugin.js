@@ -7,8 +7,8 @@ module.exports = {
     enable: true,
     package: 'egg-sequelize',
   },
-  assets :{
-    enable: true,
-    package: 'egg-view-assets',
-  }
+  // assets :{
+  //   enable: true,
+  //   package: 'egg-view-assets',
+  // }
 };

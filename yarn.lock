@@ -3034,20 +3034,6 @@ egg-utils@^2.4.1:
     mkdirp "^0.5.1"
     utility "^1.13.1"
 
-egg-view-assets@^1.6.1:
-  version "1.6.1"
-  resolved "https://registry.npm.taobao.org/egg-view-assets/download/egg-view-assets-1.6.1.tgz#14d11be3cb9c6fa84d567f9ceb053d53adf2c132"
-  integrity sha1-FNEb48ucb6hNVn+c6wU9U63ywTI=
-  dependencies:
-    await-event "^2.1.0"
-    cross-spawn "^6.0.5"
-    debug "^4.1.1"
-    detect-port "^1.3.0"
-    is-type-of "^1.2.1"
-    mz "^2.7.0"
-    mz-modules "^2.1.0"
-    sdk-base "^3.5.1"
-
 egg-view@^2.1.2:
   version "2.1.2"
   resolved "https://registry.npm.taobao.org/egg-view/download/egg-view-2.1.2.tgz#144698b23d1b187e1764e5edceae1819810d7a1f"
