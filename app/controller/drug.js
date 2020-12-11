@@ -1,7 +1,7 @@
 /*
  * @Date: 2020-12-11 06:42:09
  * @LastEditors: yetm
- * @LastEditTime: 2020-12-11 06:44:20
+ * @LastEditTime: 2020-12-12 04:11:00
  * @FilePath: /egg_temp/app/controller/drug.js
  */
 const Controller = require('egg').Controller;
@@ -16,7 +16,6 @@ class DrugController extends Controller {
     async index() {
         const ctx = this.ctx;
         const query = { limit: toInt(ctx.query.limit), offset: toInt(ctx.query.offset) };
-        console.log(ctx.model.Drug)
         ctx.body = await ctx.model.Drug.findAll(query);
     }
 
@@ -27,8 +26,8 @@ class DrugController extends Controller {
 
     async create() {
         const ctx = this.ctx;
-        const { name, age } = ctx.request.body;
-        const drug = await ctx.model.Drug.create({ name, age });
+        const { name, number, cost, sale, type } = ctx.request.body;
+        const drug = await ctx.model.Drug.create({ name, number, cost, sale, type });
         ctx.status = 201;
         ctx.body = drug;
     }
@@ -42,8 +41,8 @@ class DrugController extends Controller {
             return;
         }
 
-        const { name, age } = ctx.request.body;
-        await drug.update({ name, age });
+        const { ame, number, cost, sale, type } = ctx.request.body;
+        await drug.update({ ame, number, cost, sale, type });
         ctx.body = drug;
     }
 

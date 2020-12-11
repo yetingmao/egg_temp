@@ -1,3 +1,9 @@
+/*
+ * @Date: 2020-12-11 20:38:23
+ * @LastEditors: yetm
+ * @LastEditTime: 2020-12-12 04:04:27
+ * @FilePath: /egg_temp/config/config.default.js
+ */
 /* eslint valid-jsdoc: "off" */
 
 'use strict';
@@ -29,7 +35,12 @@ module.exports = appInfo => {
   config.AI = {
     APP_ID: '23046044',
     API_KEY: "xeXaxPynWsMk8qXoOnpIEhl6",
-    SECRET_KEY :"XmsSUWd18k3QKSQpmtPTOLilWt3nPgtG",
+    SECRET_KEY: "XmsSUWd18k3QKSQpmtPTOLilWt3nPgtG",
+  };
+  config.security = {
+    csrf: {
+      enable: false,
+    },
   };
   // config.static   = {
   //   // 如果还有其他模板引擎，需要合并多个目录
@@ -44,7 +55,7 @@ module.exports = appInfo => {
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',
-    
+
   };
   // const cluster  = {
   //   listen: {

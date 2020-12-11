@@ -1,7 +1,7 @@
 /*
  * @Date: 2020-12-11 06:46:08
  * @LastEditors: yetm
- * @LastEditTime: 2020-12-11 06:48:47
+ * @LastEditTime: 2020-12-12 04:10:05
  * @FilePath: /egg_temp/app/router/drug.js
  */
 'use strict';
