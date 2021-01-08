@@ -1,7 +1,7 @@
 /*
  * @Date: 2020-12-11 20:38:23
  * @LastEditors: yetm
- * @LastEditTime: 2020-12-12 04:04:27
+ * @LastEditTime: 2021-01-09 05:59:14
  * @FilePath: /egg_temp/config/config.default.js
  */
 /* eslint valid-jsdoc: "off" */
@@ -55,6 +55,9 @@ module.exports = appInfo => {
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',
+    multipart: {
+      mode: 'file',
+    }
 
   };
   // const cluster  = {
