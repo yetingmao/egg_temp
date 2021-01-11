@@ -5,21 +5,31 @@
  * @FilePath: /egg_temp/app/controller/ai.js
  */
 const Controller = require('egg').Controller;
-const AipImageClassifyClient = require("baidu-aip-sdk").imageClassify;
 const fs = require('fs');
 class AIController extends Controller {
   async index() {
     const { ctx, config } = this;
-    // 设置APPID/AK/SK
-    const { APP_ID, API_KEY, SECRET_KEY } = config.AI
-    // 新建一个对象，建议只保存一个对象调用服务接口
-    const client = new AipImageClassifyClient(APP_ID, API_KEY, SECRET_KEY);
+    const client = config.AIConfig ? config.AIConfig : await ctx.service.ai.creatClint();
     const file = ctx.request.files[0];
     const { filepath } = file;
-    const { model } = ctx.request.body;
     const image = fs.readFileSync(filepath).toString("base64");
+    const { model } = ctx.request.body;
     try {
-      const result = await client.advancedGeneral(image);
+      let result;
+      switch (model) {
+        case "dongwugugefenxi":
+            result = await client.advancedGeneral(image);
+          break;
+         case "zhiwu":
+            result = await client.plantDetect(image);
+          break;
+         case "shicai":
+            result = await client.ingredient(image);
+          break;
+        default:
+            result = await client.advancedGeneral(image);
+          break;
+      }
       ctx.body = JSON.stringify(result);
     } catch (error) {
       console.log(error);

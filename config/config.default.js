@@ -57,8 +57,8 @@ module.exports = appInfo => {
     // myAppName: 'egg',
     multipart: {
       mode: 'file',
-    }
-
+    },
+    AIClint:undefined
   };
   // const cluster  = {
   //   listen: {
