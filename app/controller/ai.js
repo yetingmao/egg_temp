@@ -6,6 +6,7 @@
  */
 const Controller = require('egg').Controller;
 const fs = require('fs');
+const fetch = require('node-fetch');
 class AIController extends Controller {
   async index() {
     const { ctx, config } = this;
@@ -14,7 +15,7 @@ class AIController extends Controller {
     const { filepath } = file;
     const image = fs.readFileSync(filepath).toString("base64");
     const { model } = ctx.request.body;
-    try {
+    try { 
       let result;
       switch (model) {
         case "dongwugugefenxi":
@@ -27,7 +28,27 @@ class AIController extends Controller {
             result = await client.ingredient(image);
           break;
         default:
-            result = await client.advancedGeneral(image);
+          result = await client.advancedGeneral(image);
+          break;
+      }
+      ctx.body = JSON.stringify(result);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  async compute() {
+    const { ctx } = this;
+    const file = ctx.request.files[0];
+    const { filepath } = file;
+    const image = fs.readFileSync(filepath).toString("base64");
+    const { model } = ctx.request.body;
+    try { 
+      let result;
+      switch (model) {
+        case "wulianwang-":
+            result = await ctx.service.ai.fetchRequest({model,image})
+          break;
+        default:
           break;
       }
       ctx.body = JSON.stringify(result);

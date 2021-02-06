@@ -1,3 +1,4 @@
+const fetch = require('node-fetch');
 const Service = require('egg').Service;
 const AipImageClassifyClient = require("baidu-aip-sdk").imageClassify;
 class AIService extends Service {
@@ -18,5 +19,23 @@ class AIService extends Service {
         return client;
     
   }
+
+  async fetchRequest(opt) {
+    const { config } = this;
+    const { model, image } = opt;
+        // 设置APPID/AK/SK
+    const BaseUrl = config.BaseUrl;
+    const URL = config.URL[model];
+    const response = await fetch(
+      BaseUrl + URL,
+      {
+        method: 'post',
+        body: JSON.stringify({ images: [image] }),
+        headers: { 'Content-Type': 'application/json' }
+      }
+    );
+   return await response.json();
+  }
+  
 }
 module.exports = AIService;

@@ -32,10 +32,14 @@ module.exports = appInfo => {
     database: 'test',
     password: "1234",
   };
+  config.BaseUrl = "http://172.22.189.40:8868";
   config.AI = {
     APP_ID: '23046044',
     API_KEY: "xeXaxPynWsMk8qXoOnpIEhl6",
     SECRET_KEY: "XmsSUWd18k3QKSQpmtPTOLilWt3nPgtG",
+  };
+  config.URL = {
+    "wulianwang-": '/predict/ocr_system',
   };
   config.security = {
     csrf: {

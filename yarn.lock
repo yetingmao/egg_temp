@@ -5744,6 +5744,11 @@ node-environment-flags@1.0.5:
     object.getownpropertydescriptors "^2.0.3"
     semver "^5.7.0"
 
+node-fetch@^2.6.1:
+  version "2.6.1"
+  resolved "https://registry.npm.taobao.org/node-fetch/download/node-fetch-2.6.1.tgz#045bd323631f76ed2e2b55573394416b639a0052"
+  integrity sha1-BFvTI2Mfdu0uK1VXM5RBa2OaAFI=
+
 node-homedir@^1.1.1:
   version "1.1.1"
   resolved "https://registry.npm.taobao.org/node-homedir/download/node-homedir-1.1.1.tgz#736db0b60e3bba8aba68df9927de40a7aabe1075"

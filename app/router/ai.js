@@ -12,5 +12,5 @@
 module.exports = app => {
   const { router, controller } = app;
   router.post('/ai', controller.ai.index);
-  //   router.resources('users','/users', controller.users);
+  router.post('/ai/in', controller.ai.compute);
 };

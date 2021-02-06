@@ -12,6 +12,7 @@
     "egg-scripts": "^2.11.0",
     "egg-sequelize": "^6.0.0",
     "mysql2": "^2.2.5",
+    "node-fetch": "^2.6.1",
     "sequelize-cli": "^6.2.0"
   },
   "devDependencies": {
