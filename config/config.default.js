@@ -62,7 +62,8 @@ module.exports = appInfo => {
     multipart: {
       mode: 'file',
     },
-    AIClint:undefined
+    AIClint: undefined,
+    browserDriver: undefined,
   };
   // const cluster  = {
   //   listen: {

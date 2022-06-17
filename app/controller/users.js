@@ -11,6 +11,7 @@ class UserController extends Controller {
   async index() {
     const ctx = this.ctx;
     const query = { limit: toInt(ctx.query.limit), offset: toInt(ctx.query.offset) };
+    await ctx.service.selenium.browserDriver("https://fanyi.baidu.com/");
     ctx.body = await ctx.model.Data.findAll();
   }
 
