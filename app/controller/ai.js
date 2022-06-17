@@ -8,7 +8,7 @@ const Controller = require('egg').Controller;
 const fs = require('fs');
 const fetch = require('node-fetch');
 class AIController extends Controller {
-  async index() {
+  async baidu() {
     const { ctx, config } = this;
     const client = config.AIConfig ? config.AIConfig : await ctx.service.ai.creatClint();
     const file = ctx.request.files[0];
@@ -36,14 +36,18 @@ class AIController extends Controller {
       console.log(error);
     }
   }
-  async compute() {
+  async create() {
     const { ctx } = this;
     const file = ctx.request.files[0];
     const { filepath } = file;
     const image = fs.readFileSync(filepath).toString("base64");
     const { model } = ctx.request.body;
+  
     try { 
       let result;
+      const data = await ctx.model.Data.create({ model, image:filepath });
+      //ctx.status = 201;
+     // ctx.body = data;
       switch (model) {
         case "wulianwang-":
             result = await ctx.service.ai.fetchRequest({model,image})

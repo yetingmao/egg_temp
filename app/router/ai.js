@@ -11,6 +11,7 @@
  */
 module.exports = app => {
   const { router, controller } = app;
-  router.post('/ai', controller.ai.index);
-  router.post('/ai/in', controller.ai.compute);
+  router.post('/ai/baidu', controller.ai.baidu);
+  router.post('/ai', controller.ai.create);
+ // router.get('/ai', controller.ai.index);
 };
