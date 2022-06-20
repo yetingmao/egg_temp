@@ -6,12 +6,12 @@ const { needProposeModel } = require('./pages/need/propose');
 
 async function run(_driver) {
     try {
+
         //登录
-        console.log(111, _driver.get)
         await _driver.get("http://127.0.0.1:3000/login")
         // 需求管理
         // 需求提报(ok)
-        await needProposeModel(_driver)
+        //  await needProposeModel(_driver)
 
         // 资源管理
         //专家库
@@ -36,7 +36,7 @@ async function run(_driver) {
     }
     finally {
         //关闭浏览器
-        await sleep(_driver, 1000)
+        await sleep(_driver, 10000)
         await _driver.quit();
     }
 }

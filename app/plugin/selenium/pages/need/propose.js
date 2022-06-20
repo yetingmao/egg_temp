@@ -1,9 +1,9 @@
-const { driver, By, until, Key } = require('../../utils/driver');
+const { By, until, Key } = require('../../utils/driver');
 const { waitVisibleEle, waitLocatedEle, sleep } = require('../../utils/common');
 const { login, logout } = require('../../component/index');
-async function needProposeModel() {
-    await sleep(1000);
-    await login();
+async function needProposeModel(driver) {
+    await sleep(driver, 1000);
+    await login(driver);
     //跳转到需求评审页面
     (await waitLocatedEle(By.xpath(`/html/body/div[1]/section/aside/div/div/ul/li[2]`))).click();
     (await waitVisibleEle(By.xpath("/html/body/div[1]/section/aside/div/div/ul/li[2]/ul/li[1]"))).click();
@@ -32,7 +32,7 @@ async function needProposeModel() {
     (await waitVisibleEle(By.xpath("/html/body/div[1]/section/section/main/div/div[2]/div[1]/div[7]/div/div/div/div[2]/div/div[2]/button[2]"))).click();
 
     await sleep(1000);
-    await logout();
+    await logout(driver);
 }
 module.exports = {
     needProposeModel

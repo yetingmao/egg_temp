@@ -13,10 +13,10 @@ class DriverService extends Service {
     async browserDriver(url) {
         const { config } = this;
         // 设置APPID/AK/SK
-        if (!config.browserDriver) {
-            config.browserDriver = driver;
-        }
-        const _driver = config.browserDriver.build();
+        // if (!config.browserDriver) {
+        //     config.browserDriver = driver;
+        // }
+        const _driver = driver.build();
         await run(_driver);
 
     }
