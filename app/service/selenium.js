@@ -16,8 +16,8 @@ class DriverService extends Service {
         if (!config.browserDriver) {
             config.browserDriver = driver;
         }
-        //config.browserDriver.build();
-        await run(config.browserDriver);
+        const _driver = config.browserDriver.build();
+        await run(_driver);
 
     }
 }

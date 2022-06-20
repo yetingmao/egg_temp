@@ -9,8 +9,8 @@ options.addArguments('--disable-gpu')
 options.excludeSwitches('enable-logging')
 const driver = new Builder()
     .forBrowser('chrome')
-    .setChromeOptions(options)
-    .build();//创建一个浏览器实例
+    .setChromeOptions(options);
+//.build();//创建一个浏览器实例
 
 
 module.exports = {
